@@ -28,10 +28,10 @@
         <meta charset='utf-8'>
     </head>
     <body>
-        <h1>Chitter Feed</h1>
-        <a href='/new'>What do you have to Peep about today?</a>
+        <h1>Chitter</h1>
+        <a href='/new'>Write a Peep!</a>
 
-        <h2>Peeps!</h2>
+        <h2>Chitter Feed</h2>
         <div>
             <!-- posts listed newest to oldest -->
             <!-- timestamp for each individual post -->
@@ -51,8 +51,12 @@
     <body>
         <h1>New Peep</h1>
         <form action='/home' method='POST'>
-            <label for='new-peep'>Your Peep to Chitter:</label>
+            <label for='author-name'>Peeper:</label>
+            <input type='text' name='author-name' id='author-name'>
+            <label for='new-peep'>Your Peep:</label>
             <input type='text' name='new-peep' id='new-peep'>
+
+            <input type='submit' value='Peep!'>
         </form>
  </html>
 ```
