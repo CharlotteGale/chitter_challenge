@@ -6,3 +6,6 @@ def test_get_peeps(page, test_web_address, db_connection):
     # page.click("text=write a peep!")
     h2_tag = page.locator("h2")
     expect(h2_tag).to_have_text("Chitter Feed")
+
+    peep_author_element = page.locator(".peep-author")
+    expect(peep_author_element).to_have_text("Test Author 1")

@@ -30,11 +30,16 @@
     <body>
         <h1>Chitter</h1>
         <a href='/new'>Write a Peep!</a>
-
+        
         <h2>Chitter Feed</h2>
         <div>
             <!-- posts listed newest to oldest -->
             <!-- timestamp for each individual post -->
+            <div class="individual-peep">
+                <p class="peep-author">Test Author 1</p>
+                <p class="peep-content">This is a peep</p>
+                <p class="timestamp">13:13</p>
+            </div>
         </div>
     </body>
  </html>
