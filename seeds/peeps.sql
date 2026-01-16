@@ -9,9 +9,3 @@ CREATE TABLE peeps (
     time_posted TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-INSERT INTO peeps (author, peep) VALUES (
-    ('test author_1', 'this is a test peep'),
-    ('test author_2', 'this is another test peep')
-);
-
-
