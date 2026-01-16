@@ -10,6 +10,7 @@ from app import app
 def db_connection():
     conn = DatabaseConnection(test_mode=True)
     conn.connect()
+    conn.seed("seeds/peeps_test.sql")
     return conn
 
 # This fixture starts the test server and makes it available to the tests.

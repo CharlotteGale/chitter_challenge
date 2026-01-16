@@ -1,9 +1,11 @@
+from datetime import datetime
+
 class Peep:
-    def __init__(self, id, author, peep, time_posted):
+    def __init__(self, id, author, peep, time_posted=None):
         self.id = id
         self.author = author
         self.peep = peep
-        self.time_posted = time_posted
+        self.time_posted = time_posted if time_posted is not None else datetime.now()
 
     def __eq__(self, other):
         return self.__dict__ == other.__dict__

@@ -1,0 +1,38 @@
+* {
+    background-color: rgb(31, 20, 43);
+    color: whitesmoke;
+    font-family: Inter, serif;
+    
+}
+
+h1, h2 {
+    font-family: Spectral, 'Segoe-UI', serif;
+    margin: 20px;
+}
+
+.individual-peep, .peep-author, .peep-content, .peep-timestamp {
+    background-color: whitesmoke;
+    color: rgb(31, 20, 43);
+}
+
+.individual-peep {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid whitesmoke;
+    border-radius: 5%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    margin: 40px;
+}
+
+.peep-author {
+    font-weight: bold;
+    font-size: large;
+}
+
+.peep-timestamp {
+    align-self: flex-end;
+    font-size: small;
+    padding-bottom: 10px;
+}

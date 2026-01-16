@@ -8,5 +8,3 @@ CREATE TABLE peeps (
     peep TEXT NOT NULL,
     time_posted TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
-INSERT INTO peeps (author, peep) VALUES ('Charlotte', 'I hate testing datetime, please make it easier');
