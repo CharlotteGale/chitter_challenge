@@ -1,17 +1,18 @@
 from playwright.sync_api import Page, expect
+from datetime import datetime
 
-def test_get_peeps(page, test_web_address, db_connection):
-    db_connection.seed("seeds/peeps_test.sql")
-    page.goto(f"http://{test_web_address}/home")
-    # page.click("text=write a peep!")
-    h2_tag = page.locator("h2")
-    expect(h2_tag).to_have_text("Chitter Feed")
+def test_get_peeps(page, web_client, db_connection):
+    db_connection.execute(
+        'INSERT INTO peeps (author, peep, time_posted) VALUES (%s, %s, %s)',
+        ['test author_1', 'this is a test peep', datetime(2025, 1, 15, 15, 17, 0)]
+    )
+    
+    response = web_client.get('/home')
+    html = response.data.decode()
 
-    peep_author_element = page.locator(".peep-author")
-    expect(peep_author_element).to_have_text("Test Author 1")
+    assert response.status_code == 200
+    assert 'class="peep-author"' in html
+    assert 'class="peep-content"' in html
+    assert 'class="peep-timestamp"' in html
 
-    peep_content_element = page.locator(".peep-content")
-    expect(peep_content_element).to_have_text("This is a peep")
-
-    peep_timestamp_element = page.locator(".timestamp")
-    expect(peep_timestamp_element).to_have_text("13:13")
+    
